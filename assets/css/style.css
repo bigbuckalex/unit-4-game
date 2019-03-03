@@ -1,4 +1,26 @@
+#background{
+    background-image: url("../images/background.png");
+    background-size: 100%;
+}
+
 .card-title{
-    line-height: 5px;
+    line-height: 0px;
     text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px black;
+}
+
+.card .card-content{
+    text-align: center;
+    padding: 5px;
+}
+
+h1{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+h5{
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
