@@ -26,34 +26,34 @@ let clinton = {
 
 let charList = [trump, obama, bush, clinton];
 
-let enemyList = [];
+let player = 0;
+let defender;
 
-let commander;
+$("#trump-health").text("Approval Rating: " + trump.health);
+$("#obama-health").text("Approval Rating: " + obama.health);
+$("#bush-health").text("Approval Rating: " + bush.health);
+$("#clinton-health").text("Approval Rating: " + clinton.health);
 
-$("#trump-health").text("Health: " + trump.health);
-$("#obama-health").text("Health: " + obama.health);
-$("#bush-health").text("Health: " + bush.health);
-$("#clinton-health").text("Health: " + clinton.health);
+//card movement when clicked
+$(".card-image").on("click", function(){
+    console.log(player);
+    //picking initial player
+    if(player===0){
+        player = this.parentNode.parentNode;
+        $("#opponents").html([$("#trump-card"), $("#obama-card"), $("#bush-card"), $("#clinton-card")]);
+        $("#player").html(player);
+    }
+    //picking person to debate
+    else{
+        // console.log($("#defender").html());
+        $("#opponents").append($("#defender").html());
+        // console.log(this.parentNode.parentNode);
+        $("#defender").html(this.parentNode.parentNode);
+        // console.log(player);
+    }
 
-$("#trump-card").data(trump);
-$("#obama-card").data(obama);
-$("#bush-card").data(bush);
-$("#clinton-card").data(clinton);
-
-//picking initial player
-if(enemyList.length===0){
-    $(".card-image").on("click", function(){
-        let commander = this.parentNode;
-        $("#defectors").html([$("#trump-card"),$("#obama-card"),$("#bush-card"),$("#clinton-card")]);
-        $("#commander").html(commander);
-        $("#defectors").each(function(){
-            console.log(1);
-            enemyList.push($(this));
-        });
-        
+})
 
 
-    })
-}
 
 })
